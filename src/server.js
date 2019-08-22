@@ -1,16 +1,21 @@
 import Hapi from "@hapi/hapi";
 
-import { root } from "./routes";
-
 const server = new Hapi.Server({
-  port: process.env.PORT || 8000
+  port: process.env.PORT || 8000,
+  debug: { request: ["*"] }
 });
 
 const init = async () => {
-  server.route([].concat(root));
+  await server.register({
+    plugin: require("hapi-router"),
+    options: {
+      routes: "src/routes/**/*.js"
+    }
+  });
 
   await server.start();
   console.log("Server is running");
+  console.log(server.info);
 };
 
 init();
