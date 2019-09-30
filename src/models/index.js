@@ -1,10 +1,7 @@
 import Task from "./tasks";
-<<<<<<< HEAD
+import Token from "./tokens";
+import User from "./users";
 import What from "./what";
 import Who from "./who";
 
-export { Task, What, Who };
-=======
-
-export { Task };
->>>>>>> 5093e736af733b3c5e66f02655632471b54b2eee
+export { Task, Token, User, What, Who };

@@ -1,4 +1,4 @@
-const table_name = 'tasks';
+const table_name = "tasks";
 
 exports.seed = function(knex, Promise) {
   // Deletes ALL existing entries
